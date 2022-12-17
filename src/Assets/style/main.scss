@@ -1,0 +1,12 @@
+header{
+  width: 320px;
+  height: 100vh;
+  background-color: gray;
+}
+
+.main-feaild{
+  position: relative;
+  height: 100vh;
+  width: calc(100% - 320px);
+  overflow: auto;
+}
