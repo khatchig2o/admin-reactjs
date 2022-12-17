@@ -20,11 +20,12 @@ export default function School() {
     const remove = (i) => {
         dispatch({ type: 'deleteSchool', payload: i })
     }
-    const openBox = (school) => {
+    const openBox = (school,index) => {
         dispatch({
             type: 'SHOWTHEBOX', payload: {
                 boxShow: true,
-                BoxInfo: school
+                BoxInfo: school,
+                Boxnumber : index
             }
         })
     }
@@ -42,7 +43,7 @@ export default function School() {
                         appear()
                     }}>Eddit</button>
                     <button onClick={() => remove(index)}>X</button>
-                    <h2> firstName : <Link to={'/view-school'} onClick={() => openBox(school)}>{school.schoolName}</Link></h2>
+                    <h2> firstName : <Link to={`/view-school/${index}`} onClick={() => openBox(school,index)}>{school.schoolName}</Link></h2>
                     <p>address : {school.address}</p>
                     <p>directorName : {school.directorName}</p>
                     <p>directorPhoneNumber : {school.directorPhoneNumber}</p>

@@ -1,6 +1,7 @@
 const initialValue = {
     boxShow: false,
-    BoxInfo: {}
+    BoxInfo: {},
+    number : null
 }
 
 const ViewBox = (state = initialValue, action) => {
@@ -8,7 +9,8 @@ const ViewBox = (state = initialValue, action) => {
         case 'SHOWTHEBOX':
             state = {
                 boxShow: action.payload.boxShow,
-                BoxInfo: action.payload.BoxInfo
+                BoxInfo: action.payload.BoxInfo,
+                number : action.payload.Boxnumber
             }
             return state
         default:

@@ -16,7 +16,7 @@ export default function App() {
                 <Route path="/" element={<School />} />
                 <Route path="/teacher" element={< Teachers />} />
                 <Route path='/students' element={< Students />} />
-                {schoolBox.boxShow ? <Route path="/view-school" element={<ViewSchool />} /> : ''}
+                {schoolBox.boxShow ? <Route path={`/view-school/${schoolBox.number}`} element={<ViewSchool />} /> : ''}
                 <Route path="*" element={<School />} />
             </Routes>
         </div>
