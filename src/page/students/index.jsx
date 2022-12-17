@@ -19,6 +19,7 @@ export default function Students() {
     const remove = (i) => {
         dispatch({ type: 'deleteSchool', payload: i })
     }
+
     return <div className="G-flex-wrap p-info-parent">
         <div className="p-heading">
             <button onClick={appear} >Add student</button>

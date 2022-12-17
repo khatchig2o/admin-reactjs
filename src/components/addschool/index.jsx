@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import './index.scss'
 
-export default function AddSchool({ edits, disAppear }) {
+export default function AddSchool({ edits, disAppear, setedits ,type}) {
     const dispatch = useDispatch()
     const store = useSelector(store => store.SCHOOLS)
 
@@ -86,6 +86,7 @@ export default function AddSchool({ edits, disAppear }) {
         if (validatiom) {
             if (edits >= 0) {
                 dispatch({ type: 'editSchool', payload: { number: edits, paylnewstate: schools } })
+                setedits(-1)
             } else if (validatiom) {
                 dispatch({ type: 'addSchool', payload: schools })
             }
@@ -102,7 +103,7 @@ export default function AddSchool({ edits, disAppear }) {
                 fond: 0,
             })
             disAppear()
-        }else{
+        } else {
             setSchoolserror(texts)
         }
     }
